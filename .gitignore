@@ -2,3 +2,4 @@
 /composer.lock
 *.swp
 /.idea
+/tests/config-local.php
