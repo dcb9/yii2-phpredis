@@ -7,12 +7,13 @@ It includes a `Cache` and `Session` storage handler in redis.
 
 [![Build Status](https://travis-ci.org/dcb9/yii2-phpredis.svg)](https://travis-ci.org/dcb9/yii2-phpredis)
 [![Code Climate](https://codeclimate.com/github/dcb9/yii2-phpredis/badges/gpa.svg)](https://codeclimate.com/github/dcb9/yii2-phpredis)
+[![Test Coverage](https://codeclimate.com/github/dcb9/yii2-phpredis/badges/coverage.svg)](https://codeclimate.com/github/dcb9/yii2-phpredis/coverage)
 [![Issue Count](https://codeclimate.com/github/dcb9/yii2-phpredis/badges/issue_count.svg)](https://codeclimate.com/github/dcb9/yii2-phpredis)
 [![Latest Stable Version](https://poser.pugx.org/dcb9/yii2-phpredis/version)](https://packagist.org/packages/dcb9/yii2-phpredis)
 [![Total Downloads](https://poser.pugx.org/dcb9/yii2-phpredis/downloads)](https://packagist.org/packages/dcb9/yii2-phpredis)
 [![License](https://poser.pugx.org/dcb9/yii2-phpredis/license)](https://packagist.org/packages/dcb9/yii2-phpredis)
 
-**<font color="red">Notice: THIS REPO DID NOT SUPPORT ACTIVE RECORD.</font>**
+**Notice: THIS REPO DID NOT SUPPORT ACTIVE RECORD.**
 
 Requirements
 ------------
