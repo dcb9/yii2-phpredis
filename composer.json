@@ -1,0 +1,21 @@
+{
+  "name": "dcb9/yii2-phpredis",
+  "description": "yii2 with phpredis",
+  "minimum-stability": "stable",
+  "license": "BSD",
+  "authors": [
+    {
+      "name": "Bob Chengbin",
+      "email": "bob@phpor.me"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.4",
+    "ext-redis": ">=2.2.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "dcb9\\redis\\": ""
+    }
+  }
+}
