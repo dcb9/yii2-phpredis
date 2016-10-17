@@ -1,0 +1,27 @@
+language: php
+
+php:
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
+
+services:
+  - redis-server
+
+before_install: echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
+install:
+  - composer global require "fxp/composer-asset-plugin:^1.2.0"
+  - composer require codeclimate/php-test-reporter --dev
+  - composer install --no-progress --no-interaction
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+addons:
+  code_climate:
+    repo_token: 255db28eb13c47dff54362135d879145fc97afff3eb91d97158608818bb4d1a9
+
+after_script:
+  - vendor/bin/test-reporter
