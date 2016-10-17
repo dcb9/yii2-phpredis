@@ -2,8 +2,14 @@
 
 // ensure we get report on all possible php errors
 error_reporting(-1);
-define('YII_ENABLE_ERROR_HANDLER', false);
-define('YII_DEBUG', true);
+
+if (!defined('YII_ENABLE_ERROR_HANDLER')) {
+  define('YII_ENABLE_ERROR_HANDLER', false);
+}
+
+if (!defined('YII_DEBUG')) {
+    define('YII_DEBUG', true);
+}
 
 $_SERVER['SCRIPT_NAME'] = '/' . __DIR__;
 $_SERVER['SCRIPT_FILENAME'] = __FILE__;

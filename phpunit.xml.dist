@@ -11,8 +11,10 @@
 			</testsuite>
 		</testsuites>
 		<filter>
-			<whitelist processUncoveredFilesFromWhitelist="true">
-				<directory suffix=".php">./</directory>
-			</whitelist>
+            <whitelist>
+				<file>./Cache.php</file>
+				<file>./Connection.php</file>
+				<file>./Session.php</file>
+            </whitelist>
 		</filter>
 </phpunit>
