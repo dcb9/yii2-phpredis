@@ -13,7 +13,7 @@ It includes a `Cache` and `Session` storage handler in redis.
 [![Total Downloads](https://poser.pugx.org/dcb9/yii2-phpredis/downloads)](https://packagist.org/packages/dcb9/yii2-phpredis)
 [![License](https://poser.pugx.org/dcb9/yii2-phpredis/license)](https://packagist.org/packages/dcb9/yii2-phpredis)
 
-**Notice: THIS REPO DID NOT SUPPORT ACTIVE RECORD.**
+**Notice: THIS REPO DOES NOT SUPPORT ACTIVE RECORD.**
 
 Requirements
 ------------
