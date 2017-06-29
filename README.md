@@ -18,9 +18,9 @@ It includes a `Cache` and `Session` storage handler in redis.
 Requirements
 ------------
 
-- PHP >=5.4.0 
+- PHP >= 5.4.0 
 - Redis >= 2.6.12
-- ext-redis >=2.2.7
+- ext-redis >= 2.2.7
 - Yii2 ~2.0.4
 
 Installation
