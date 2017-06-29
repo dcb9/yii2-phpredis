@@ -69,7 +69,7 @@ class Cache extends \yii\caching\Cache
         if ($expire == 0) {
             return (bool)$this->redis->set($key, $value);
         } else {
-            return (bool)$this->redis->setex($key, $expire, $value);
+            return (bool)$this->redis->setEx($key, $expire, $value);
         }
     }
 
@@ -78,18 +78,13 @@ class Cache extends \yii\caching\Cache
      */
     protected function setValues($data, $expire)
     {
-        $args = [];
-        foreach ($data as $key => $value) {
-            $args[] = $key;
-            $args[] = $value;
-        }
         $failedKeys = [];
         if ($expire == 0) {
-            $this->redis->mset($args);
+            $this->redis->mSet($data);
         } else {
-            $expire = (int)($expire * 1000);
+            $expire = (int)$expire;
             $this->redis->multi();
-            $this->redis->mset($args);
+            $this->redis->mSet($data);
             $index = [];
             foreach ($data as $key => $value) {
                 $this->redis->expire($key, $expire);
@@ -114,10 +109,10 @@ class Cache extends \yii\caching\Cache
     protected function addValue($key, $value, $expire)
     {
         if ($expire == 0) {
-            return (bool)$this->redis->set($key, $value);
+            return (bool)$this->redis->setNx($key, $value);
         }
 
-        return (bool)$this->redis->setex($key, $expire, $value);
+        return (bool)$this->redis->rawCommand('SET', $key, $value, 'EX', $expire, 'NX');
     }
 
     /**
