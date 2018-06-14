@@ -77,13 +77,29 @@ class Connection extends Redis implements Configurable
      * Establishes a DB connection.
      * It does nothing if a DB connection has already been established.
      * @throws RedisException if connection fails
+     * @example 问题详细描述 https://bugs.php.net/bug.php?id=46851  php_redis.so 版本为4.0.2时会出现一条警告
+     * @see connect()
+     * @param string    $host
+     * @param int       $port
+     * @param float     $timeout
+     * @param int       $retry_interval
+     * @return bool
      */
-    public function open()
+    public function open( $host = null, $port = null, $timeout = null, $retry_interval = 0 )
     {
         if ($this->unixSocket !== null) {
             $isConnected = $this->connect($this->unixSocket);
         } else {
-            $isConnected = $this->connect($this->hostname, $this->port, $this->connectionTimeout);
+            if(is_null($host)){
+                $host = $this->hostname;
+            }
+            if(is_null($port)){
+                $port = $this->port;
+            }
+            if(is_null($timeout)){
+                $timeout = $this->connectionTimeout;
+            }
+            $isConnected = $this->connect($host, $port, $timeout, null, $retry_interval);
         }
 
         if ($isConnected === false) {
