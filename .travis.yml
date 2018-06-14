@@ -10,12 +10,12 @@ php:
 services:
   - redis-server
 
-before_install: v=$(phpenv version-name); if [ ${v:0:1} -lt 7 ]; then pecl install redis; else echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi 
+before_install: v=$(phpenv version-name); if [ ${v:0:1} -lt 7 ]; then pecl install igbinary ; yes | pecl install redis; else echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi
 
 install:
-  - composer global require "fxp/composer-asset-plugin:^1.2.0"
-  - composer require codeclimate/php-test-reporter --dev
-  - composer install --no-progress --no-interaction
+  - composer global require --prefer-dist "fxp/composer-asset-plugin:^1.2.0"
+  - composer require codeclimate/php-test-reporter --dev --prefer-dist
+  - composer install --no-progress --no-interaction --prefer-dist
 
 script:
   - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
