@@ -5,7 +5,7 @@ This extension provides the [redis](http://redis.io/) key-value store support fo
 It includes a `Cache` and `Session` storage handler in redis.
 
 
-[![Build Status](https://travis-ci.org/dcb9/yii2-phpredis.svg)](https://travis-ci.org/dcb9/yii2-phpredis)
+[![Build Status](https://travis-ci.org/dcb9/yii2-phpredis.svg?branch=master)](https://travis-ci.org/dcb9/yii2-phpredis)
 [![Code Climate](https://codeclimate.com/github/dcb9/yii2-phpredis/badges/gpa.svg)](https://codeclimate.com/github/dcb9/yii2-phpredis)
 [![Test Coverage](https://codeclimate.com/github/dcb9/yii2-phpredis/badges/coverage.svg)](https://codeclimate.com/github/dcb9/yii2-phpredis/coverage)
 [![Issue Count](https://codeclimate.com/github/dcb9/yii2-phpredis/badges/issue_count.svg)](https://codeclimate.com/github/dcb9/yii2-phpredis)
